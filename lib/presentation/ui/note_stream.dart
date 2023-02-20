@@ -46,7 +46,7 @@ class NotesStream extends ConsumerWidget {
       body: SingleChildScrollView(
         child: Container(
           width: 400,
-          height: 800,
+          height: 600,
           child: notesStream.when(
             loading: () => const CircularProgressIndicator(),
             error: (error, stackTrace) => Text(error.toString()),
