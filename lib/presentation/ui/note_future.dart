@@ -7,6 +7,7 @@ class NotesFuture extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // AsyncValue型が帰ってくるので、こちら指定する．
     AsyncValue config = ref.watch(notesFutureProvider);
     return Scaffold(
       appBar: AppBar(
@@ -17,7 +18,7 @@ class NotesFuture extends ConsumerWidget {
         error: (err, stack) => Text('Error: $err'),
         data: (notes) {
           return ListView.builder(
-            itemCount: notes.length,
+            itemCount: notes.length,// なぜかコードの保管機能で出てこない？
             itemBuilder: (BuildContext context, int index) {
               final note = notes[index];
               return ListTile(
