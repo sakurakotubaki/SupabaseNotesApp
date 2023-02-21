@@ -9,3 +9,9 @@ final notesProvider = StateProvider<SupabaseClient>((ref) {
 final notesStreamProvider = StreamProvider<List<Map<String, dynamic>>>((ref) {
   return Supabase.instance.client.from('notes').stream(primaryKey: ['id']);
 });
+
+final notesFutureProvider = FutureProvider<List<Map<String, dynamic>>>((ref) async {
+  return await Supabase.instance.client
+      .from('notes')
+      .select<List<Map<String, dynamic>>>();
+});
