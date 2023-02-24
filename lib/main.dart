@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:supabase_notes/presentation/ui/note_future.dart';
-import 'package:supabase_notes/presentation/ui/note_stream.dart';
-import 'package:supabase_notes/presentation/utils/notes_notifire.dart';
-import 'package:supabase_notes/presentation/ui/notes_page.dart';
+import 'package:supabase_notes/tutorial/my_widget.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: NotesFuture(),
+      home: MyWidget(),
     );
   }
 }
